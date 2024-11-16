@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Preloader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: sans-serif;
+        }
+
+        .preloader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .book-container {
+            position: relative;
+        }
+
+        .book {
+            width: 100px;
+            height: 60px;
+            background-color: orange;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .page {
+            width: 90px;
+            height: 50px;
+            background-color: rgb(245, 229, 200);
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border-radius: 4px;
+            transform-origin: left;
+            animation: flip 2s infinite ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        .page:nth-child(1) {
+            background-color: rgb(245, 218, 170);
+            animation-delay: 0s;
+        }
+
+        .page:nth-child(2) {
+            background-color: rgb(244, 228, 198);
+            animation-delay: 0.3s;
+        }
+
+        .page:nth-child(3) {
+            background-color: rgb(250, 217, 156);
+            animation-delay: 0.6s;
+        }
+
+        .cover {
+            width: 100px;
+            height: 60px;
+            background-color: rgb(244, 184, 73);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 8px;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            50% {
+                transform: rotateY(-180deg);
+            }
+
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="book-container">
+            <div class="book">
+                <div class="page"></div>
+                <div class="page"></div>
+                <div class="page"></div>
+                <div class="cover"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
