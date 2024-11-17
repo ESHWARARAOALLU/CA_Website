@@ -176,6 +176,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
 // Retrieve the last active page from local storage
 const lastActivePage = localStorage.getItem("activePage");
 
