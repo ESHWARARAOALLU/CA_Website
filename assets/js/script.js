@@ -1,5 +1,22 @@
 'use strict';
 
+const modalBackdrop = document.getElementById("modalBackdrop");
+  const openModal = document.getElementById("finance");
+  const closeModal = document.getElementById("financeClose");
+
+  finance.addEventListener("click", () => {
+    modalBackdrop.style.display = "block";
+  });
+
+  financeClose.addEventListener("click", () => {
+    modalBackdrop.style.display = "none";
+  });
+
+  modalBackdrop.addEventListener("click", (event) => {
+    if (event.target === modalBackdrop) {
+      modalBackdrop.style.display = "none";
+    }
+  });
 
 
 // element toggle function
